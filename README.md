@@ -8,6 +8,22 @@ This project involves analyzing a news dataset to explore category distributions
 
 The dataset is a JSON file containing news articles with the following columns: `category`, `authors`, `headline`, `short_description`, and `year`.
 
+Each record in the dataset consists of the following attributes:
+
+**category:** category in which the article was published.
+
+**headline:** the headline of the news article.
+
+**authors:** list of authors who contributed to the article.
+
+**link:** link to the original news article.
+
+**short_description:** Abstract of the news article.
+
+**date:** publication date of the article.
+
+There are a total of 42 news categories in the dataset
+
 ## Key Features of the Code
 
 1. **Data Loading and Exploration**  
@@ -51,16 +67,16 @@ The dataset is a JSON file containing news articles with the following columns: 
 ## Dependencies
 
 The following R packages are required:  
-`dplyr`, `ggplot2`, `jsonlite`, `tm`, `stringr`, `textstem`, `syuzhet`, `cluster`, `writexl`, `SnowballC`, and `tidyr`.
+`dplyr`, `ggplot2`, `jsonlite`, `tm`, `stringr`, `textstem`, `syuzhet`, `cluster`, `writexl`, `SnowballC`, `tidyr`, and 'writexl'.
 
 ## How to Run
 
 1. Install the required R packages:  
    ```R
-   install.packages(c("dplyr", "ggplot2", "jsonlite", "tm", "stringr", "textstem", "syuzhet", "cluster", "writexl", "SnowballC", "tidyr"))
+   install.packages(c("dplyr", "ggplot2", "jsonlite", "tm", "stringr", "textstem", "syuzhet", "cluster", "writexl", "SnowballC", "tidyr", "writexl"))
    ```
 
-2. Load the script in R and execute it line by line.
+2. Load the script in R (Version 4.3.3) and execute it line by line.
 
 3. Ensure the dataset path is correct when loading the JSON file.
 
@@ -69,3 +85,10 @@ The following R packages are required:
 ## Conclusion
 
 This analysis provides insights into news categories, author contributions, and identifies potential clickbait articles, using a combination of statistical and machine learning techniques.
+
+## Citation
+1. Misra, Rishabh. "News Category Dataset." arXiv preprint arXiv:2209.11429 (2022).
+2. Misra, Rishabh and Jigyasa Grover. "Sculpting Data for ML: The first act of Machine Learning." ISBN 9798585463570 (2021).
+
+## Acknowlwdgement
+This dataset was collected from HuffPost
