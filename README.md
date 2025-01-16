@@ -1,4 +1,4 @@
-# News Category Analysis and Clickbait Detection
+# Unsupervised Detection of Sensational Headlines in News Article Dataset: A Clickbait Analysis
 
 ## Overview
 
