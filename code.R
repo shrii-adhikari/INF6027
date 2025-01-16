@@ -61,10 +61,6 @@ category_plot <- ggplot(category_frequency, aes(x = reorder(category, -frequency
 print(category_plot)
 
 
-
-
-
-
 #fitering data based on authors
 # Filter out rows where 'authors' is NULL or empty before calculating frequency
 author_frequency <- news_data %>%
@@ -94,7 +90,6 @@ top_10_author_plot <- ggplot(top_10_authors, aes(x = reorder(authors, -frequency
 print(top_10_author_plot)
 
 
-
 # Calculate the sum of the frequencies for the top 10 authors
 sum_top_10_authors <- sum(top_10_authors$frequency)
 
@@ -108,8 +103,7 @@ top_10_authors_data <- news_data %>%
 
 
 
-
-
+#Extracting "year"
 # Convert the 'date' column to Date format (if not already)
 top_10_authors_data$date <- as.Date(top_10_authors_data$date, format = "%Y-%m-%d")
 
@@ -248,7 +242,7 @@ print(filtered_data_plot)
 
 
 
-#sentiment Analysis
+#SENTIMENT ANALYSIS
 # Function to calculate sentiment
 get_sentiment_label <- function(text) {
   sentiment_score <- get_sentiment(text, method = "syuzhet")
@@ -453,7 +447,7 @@ cat("\nFrequency of Semantic Mismatch = No:", semantic_mismatch_no_freq, "\n")
 
 
 
-#final comparison- CLICK BAIT DETECTION
+#FINAL COMPARISION- CLICK BAIT DETECTION
 # Count the total number of articles and clickbait articles for each author
 author_comparison <- filtered_data %>%
   group_by(authors) %>%
@@ -520,21 +514,13 @@ ggplot(author_comparison_percentage_long, aes(x = reorder(authors, -percentage),
 
 
 
-
-
-
-
-
 ##K-means Clustering 
 #install.packages("cluster")
 library(cluster)
 
-
-
 # Select only the required columns for clustering
 clustering_data <- filtered_data %>%
   select(cosine_similarity, jaccard_similarity)
-
 
 # Scale the data
 scaled_data <- scale(clustering_data)
